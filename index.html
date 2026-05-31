@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio website for Aka Shakthi Avri Afika" />
+  <title>Aka Shakthi Avri Afika &mdash; Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=neo">
+</head>
+<body>
+  <div class="bg"></div>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <nav id="nav" aria-label="Primary navigation">
+    <a class="brand" href="#home" aria-label="Aka Shakthi home">
+      <span class="brand-mark">A</span>
+      <span class="display">AKA.DEV</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle color mode">Mood</button>
+    </div>
+    <button class="menu" id="menuBtn" type="button" aria-label="Open menu">Menu</button>
+  </nav>
+
+  <main class="page">
+    <section id="home" class="hero">
+      <div class="container hero-grid reveal">
+        <div class="hero-copy">
+          <div class="pill"><span class="dot"></span>Available for opportunities</div>
+          <h1 class="display">AKA SHAKTHI <span class="gradient">AVRI AFIKA</span></h1>
+          <div class="typing">// <span id="typed"></span><span class="caret"></span></div>
+          <p class="lead">
+            Game Technology graduate specializing in C# Unity and Lua Roblox. I apply SOLID principles
+            and design patterns to craft smooth, multiplayer-ready gameplay. Currently building at
+            <a href="https://rivrs.io" target="_blank" rel="noopener noreferrer">RIVRS Studio</a>.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="https://aka-shakthi.itch.io" target="_blank" rel="noopener noreferrer">View Games</a>
+            <a class="btn" href="https://github.com/akashakthi" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/akashakthi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="hero-board" aria-label="Portfolio snapshot">
+          <div class="board-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>PLAYER CARD</strong>
+          </div>
+          <div class="avatar-lockup">
+            <div class="avatar-pixel">A</div>
+            <div>
+              <small>Role</small>
+              <h2>Game Programmer</h2>
+            </div>
+          </div>
+          <div class="quest-list">
+            <span>Unity gameplay systems</span>
+            <span>Roblox multiplayer loops</span>
+            <span>Clean architecture for games</span>
+          </div>
+          <div class="mini-console" aria-hidden="true">
+            <div class="screen-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="console-buttons">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+        </aside>
+
+        <div class="stats">
+          <div class="glass stat" style="--c:var(--cyan)"><strong>5+</strong><span>Games Shipped</span></div>
+          <div class="glass stat" style="--c:var(--yellow)"><strong>3.64</strong><span>GPA</span></div>
+          <div class="glass stat" style="--c:var(--blue)"><strong>1 yr+</strong><span>Industry Exp.</span></div>
+          <div class="glass stat" style="--c:var(--violet)"><strong>2</strong><span>Studios</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <span>Unity</span><span>Roblox</span><span>C#</span><span>Lua</span><span>Multiplayer</span><span>SOLID</span><span>Gameplay</span><span>Systems</span>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">01 / ABOUT</div>
+          <h2>Who Am I?</h2>
+        </div>
+        <div class="two">
+          <div class="reveal">
+            <div class="glass card">
+              <p>
+                I am a <span class="text-mark">Game Technology graduate from STMM Yogyakarta (GPA 3.64)</span>
+                who believes that great games are built on great code. My passion lies at the intersection
+                of clean software engineering and compelling gameplay.
+              </p>
+              <p>
+                Currently working as a <span class="text-mark blue">Junior Game Programmer at RIVRS Studio</span>
+                in the Roblox Division, developing and maintaining live multiplayer games using Lua while
+                keeping the same passion for clean, maintainable C# and Unity craftsmanship.
+              </p>
+            </div>
+            <div class="info">
+              <div class="info-row"><b>Location</b><span>Klaten, Central Java, Indonesia</span></div>
+              <div class="info-row"><b>Email</b><span><a href="mailto:akashakthi0@gmail.com">akashakthi0@gmail.com</a></span></div>
+              <div class="info-row"><b>WhatsApp</b><span><a href="https://wa.me/6285156557626" target="_blank" rel="noopener noreferrer">+62-851-5655-7626</a></span></div>
+              <div class="info-row"><b>Studio</b><span><a href="https://rivrs.io" target="_blank" rel="noopener noreferrer">rivrs.io</a> / Roblox Division</span></div>
+              <div class="info-row"><b>Itch.io</b><span><a href="https://aka-shakthi.itch.io" target="_blank" rel="noopener noreferrer">aka-shakthi.itch.io</a></span></div>
+            </div>
+          </div>
+
+          <div class="pill-grid reveal">
+            <div class="glass card mini" style="--c:var(--cyan)">
+              <div class="icon">{}</div>
+              <h3>Clean Architecture</h3>
+              <p>Applying SOLID principles to create maintainable, scalable game systems.</p>
+            </div>
+            <div class="glass card mini" style="--c:var(--violet)">
+              <div class="icon">[]</div>
+              <h3>Design Patterns</h3>
+              <p>Factory, Observer, Singleton and State Machine patterns for robust gameplay logic.</p>
+            </div>
+            <div class="glass card mini" style="--c:var(--blue)">
+              <div class="icon">&lt;/&gt;</div>
+              <h3>Multiplayer Systems</h3>
+              <p>Maintaining live multiplayer Roblox games with server-client architecture.</p>
+            </div>
+            <div class="glass card mini" style="--c:var(--yellow)">
+              <div class="icon">*</div>
+              <h3>Growth Mindset</h3>
+              <p>Expanding from Unity/C# into Lua/Roblox while evolving across platforms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label pink">02 / PROJECTS</div>
+          <h2>Games I've Built</h2>
+        </div>
+        <div class="projects">
+          <a class="glass project reveal" style="--c:var(--cyan)" href="https://aka-shakthi.itch.io/warteglanggananintern" target="_blank" rel="noopener noreferrer">
+            <div class="project-img">
+              <img src="https://img.itch.zone/aW1nLzI1MzEwNzA3LnBuZw==/315x250%23c/Zsk6JG.png" alt="Warteg Langganan Intern preview" loading="lazy">
+              <span class="badge">Internship</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <div><h3>Warteg Langganan Intern</h3><small>Industry Project</small></div>
+                <span class="btn">Play</span>
+              </div>
+              <p>Developed economy, cooking mechanics, and dynamic serving systems for a management simulation game.</p>
+              <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">Simulation</span></div>
+            </div>
+          </a>
+
+          <a class="glass project reveal" style="--c:var(--violet)" href="https://aka-shakthi.itch.io/butikku" target="_blank" rel="noopener noreferrer">
+            <div class="project-img">
+              <img src="https://img.itch.zone/aW1nLzI2MTIwNzg0LnBuZw==/315x250%23c/%2B0QoBZ.png" alt="Butikku preview" loading="lazy">
+              <span class="badge">Thesis</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <div><h3>Butikku</h3><small>Final Thesis</small></div>
+                <span class="btn">Play</span>
+              </div>
+              <p>Scalable boutique management simulation using modular ScriptableObject inventory systems.</p>
+              <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">ScriptableObject</span></div>
+            </div>
+          </a>
+
+          <a class="glass project reveal" style="--c:var(--yellow)" href="https://aka-shakthi.itch.io/the-avengers-seed" target="_blank" rel="noopener noreferrer">
+            <div class="project-img">
+              <img src="https://img.itch.zone/aW1nLzE3Nzg1NDc5LnBuZw==/315x250%23c/g6J3MJ.png" alt="The Avengers Seed preview" loading="lazy">
+              <span class="badge">Competition</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <div><h3>The Avengers Seed</h3><small>Gameseed 2024</small></div>
+                <span class="btn">Play</span>
+              </div>
+              <p>Competition entry built under jam constraints, combining creative mechanics with solid architecture.</p>
+              <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">Game Jam</span></div>
+            </div>
+          </a>
+
+          <a class="glass project reveal" style="--c:var(--green)" href="https://yaaanbo.itch.io/mythwood-garden" target="_blank" rel="noopener noreferrer">
+            <div class="project-img">
+              <img src="https://img.itch.zone/aW1nLzE4NDM5NzQzLnBuZw==/original/QhK2yH.png" alt="Mythwood Garden preview" loading="lazy">
+              <span class="badge">GameJam+ 2024</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <div><h3>Mythwood Garden</h3><small>Technical Artist</small></div>
+                <span class="btn">Play</span>
+              </div>
+              <p>GameJam+ 2024 competition project where I contributed visual implementation and presentation polish.</p>
+              <div class="tags"><span class="tag">Unity</span><span class="tag">Technical Art</span><span class="tag">Game Jam</span></div>
+            </div>
+          </a>
+
+          <a class="glass project reveal" style="--c:var(--pink)" href="https://aka-shakthi.itch.io/swaraquest" target="_blank" rel="noopener noreferrer">
+            <div class="project-img">
+              <img src="https://img.itch.zone/aW1nLzE3MzYzOTA4LnBuZw==/315x250%23c/NgVfmH.png" alt="SwaraQuest preview" loading="lazy">
+              <span class="badge">Academic</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <div><h3>SwaraQuest</h3><small>2nd Year Project</small></div>
+                <span class="btn">Play</span>
+              </div>
+              <p>Foundational gameplay loop and core mechanics for a semester-long academic team project.</p>
+              <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">Team Project</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label blue">03 / EXPERIENCE</div>
+          <h2>Work Experience</h2>
+        </div>
+        <div class="timeline">
+          <div class="glass card exp reveal" style="--c:var(--blue)">
+            <header>
+              <div>
+                <h3>Junior Game Programmer</h3>
+                <div class="company">RIVRS / Roblox Division</div>
+                <small class="mono">Full-time / On-site / Apr 2026 - Present</small>
+              </div>
+              <a class="btn" href="https://rivrs.io" target="_blank" rel="noopener noreferrer">RIVRS</a>
+            </header>
+            <p>Working in the Roblox Division at RIVRS, creating high-quality UGC games across Roblox, Minecraft, Fortnite and more.</p>
+            <div class="tags"><span class="tag">Lua</span><span class="tag">Roblox Studio</span><span class="tag">Multiplayer</span><span class="tag">UGC Games</span></div>
+            <ul class="check">
+              <li>Developing and maintaining live multiplayer Roblox games.</li>
+              <li>Handling server-client architecture for smooth multiplayer experiences.</li>
+              <li>Expanding expertise from Unity/C# into the Roblox ecosystem.</li>
+            </ul>
+          </div>
+
+          <div class="glass card exp reveal" style="--c:var(--cyan)">
+            <header>
+              <div>
+                <h3>Game Programmer Intern</h3>
+                <div class="company">Satriver Studio</div>
+                <small class="mono">Internship / Indonesia / May 2025 - Jun 2025</small>
+              </div>
+              <span class="btn">6 Months</span>
+            </header>
+            <p>Developed core systems for a management simulation game and delivered milestone features on schedule.</p>
+            <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">Simulation</span><span class="tag">Economy Systems</span></div>
+            <ul class="check">
+              <li>Developed financial economy systems.</li>
+              <li>Built dynamic cooking mechanics with recipe validation.</li>
+              <li>Implemented real-time serving and customer satisfaction systems.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label violet">04 / SKILLS</div>
+          <h2>Technical Arsenal</h2>
+        </div>
+        <div class="skills">
+          <div class="glass card skill reveal" style="--c:var(--cyan)"><h3>Languages</h3><div class="tags"><span class="tag">C#</span><span class="tag">Lua</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div></div>
+          <div class="glass card skill reveal" style="--c:var(--blue)"><h3>Game Engines & Platforms</h3><div class="tags"><span class="tag">Unity 2D</span><span class="tag">Unity 3D</span><span class="tag">Roblox Studio</span><span class="tag">Unity Physics</span></div></div>
+          <div class="glass card skill reveal" style="--c:var(--violet)"><h3>Architecture & Patterns</h3><div class="tags"><span class="tag">SOLID</span><span class="tag">OOP</span><span class="tag">State Machine</span><span class="tag">Observer</span><span class="tag">Factory</span></div></div>
+          <div class="glass card skill reveal" style="--c:var(--yellow)"><h3>Multiplayer & Networking</h3><div class="tags"><span class="tag">Server-Client</span><span class="tag">Remote Events</span><span class="tag">Game State Sync</span></div></div>
+          <div class="glass card skill reveal" style="--c:var(--green)"><h3>Version Control</h3><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GitLab</span><span class="tag">Plastic SCM</span></div></div>
+          <div class="glass card skill reveal" style="--c:var(--pink)"><h3>Tools & Creative</h3><div class="tags"><span class="tag">Visual Studio</span><span class="tag">VS Code</span><span class="tag">Blender</span><span class="tag">Figma</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label green">05 / EDUCATION & CERTS</div>
+          <h2>Background & Credentials</h2>
+        </div>
+        <div class="two">
+          <div class="glass card reveal" style="--c:var(--green)">
+            <h3 class="display">Bachelor of Applied Science (D4)<br><span>Game Technology</span></h3>
+            <p>STMM Yogyakarta (MMTC) / 2022 - 2026</p>
+            <div class="meter-panel">
+              <div><span class="mono">Grade Point Average</span><strong>3.64</strong></div>
+              <div class="meter"><span></span></div>
+            </div>
+            <ul class="check">
+              <li>President of HIMA GAMETECH (2024)</li>
+              <li>Vice President of HIMA GAMETECH (2023)</li>
+            </ul>
+          </div>
+
+          <div class="glass card reveal" style="--c:var(--violet)">
+            <h3 class="display">Certifications</h3>
+            <div class="tags">
+              <span class="tag">IGDX Bootcamp 2024</span>
+              <span class="tag">Game Development & Animation</span>
+              <span class="tag">Unity Game Dev Dasar</span>
+              <span class="tag">3D Low Poly Model Artist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal center">
+          <div class="label blue">06 / CONTACT</div>
+          <h2>Let's Connect</h2>
+          <p>Looking for a game programmer who writes clean, maintainable code and ships multiplayer experiences? Let's talk.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="glass contact-card reveal" style="--c:var(--cyan)" href="mailto:akashakthi0@gmail.com"><span class="icon">@</span><span><b>Email</b><span>akashakthi0@gmail.com</span></span></a>
+          <a class="glass contact-card reveal" style="--c:var(--violet)" href="https://wa.me/6285156557626" target="_blank" rel="noopener noreferrer"><span class="icon">WA</span><span><b>WhatsApp</b><span>+62-851-5655-7626</span></span></a>
+          <a class="glass contact-card reveal" style="--c:var(--green)" href="https://www.google.com/maps/search/?api=1&query=Klaten%2C%20Central%20Java" target="_blank" rel="noopener noreferrer"><span class="icon">ID</span><span><b>Location</b><span>Klaten, Central Java</span></span></a>
+          <a class="glass contact-card reveal" style="--c:var(--blue)" href="https://www.linkedin.com/in/akashakthi" target="_blank" rel="noopener noreferrer"><span class="icon">in</span><span><b>LinkedIn</b><span>linkedin.com/in/akashakthi</span></span></a>
+          <a class="glass contact-card reveal" style="--c:var(--pink)" href="https://github.com/akashakthi" target="_blank" rel="noopener noreferrer"><span class="icon">GH</span><span><b>GitHub</b><span>github.com/akashakthi</span></span></a>
+          <a class="glass contact-card reveal" style="--c:var(--yellow)" href="https://aka-shakthi.itch.io" target="_blank" rel="noopener noreferrer"><span class="icon">IO</span><span><b>Itch.io</b><span>aka-shakthi.itch.io</span></span></a>
+        </div>
+
+        <div class="glass cta reveal" style="--c:var(--yellow)">
+          <h2>Ready to Build Something Amazing?</h2>
+          <p>Whether it's an indie game, a studio project, multiplayer systems, or a creative collaboration, I'm excited to be part of your team.</p>
+          <div class="cta-actions">
+            <a class="btn primary" href="mailto:akashakthi0@gmail.com">Email Me</a>
+            <a class="btn" href="https://wa.me/6285156557626" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn" href="https://www.linkedin.com/in/akashakthi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+
+        <footer>
+          <div>&copy; 2026 Aka Shakthi Avri Afika</div>
+          <div>// Game Dev / Unity / Roblox</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="music/BgmWeb.mp3" type="audio/mpeg">
+    <source src="music/BgmWeb.ogg" type="audio/ogg">
+    <source src="music/BgmWeb.wav" type="audio/wav">
+  </audio>
+  <button class="sound-toggle" id="soundToggle" type="button" aria-label="Toggle background music" aria-pressed="false">
+    <span class="sound-icon" id="soundIcon">OFF</span>
+    <span class="sound-text" id="soundText">Sound Off</span>
+  </button>
+
+  <script src="js/main.js?v=neo" defer></script>
+</body>
+</html>
