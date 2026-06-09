@@ -1,14 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio website for Aka Shakthi Avri Afika" />
-  <title>Aka Shakthi Avri Afika &mdash; Portfolio</title>
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('aka-theme');
+        var dark = stored === 'dark'
+          || (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="description" content="Aka Shakthi Avri Afika — Game Programmer specializing in Unity/C# and Roblox/Lua. Clean architecture, SOLID principles, and multiplayer systems." />
+  <meta name="author" content="Aka Shakthi Avri Afika" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffdf2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0c16" />
+  <title>Aka Shakthi Avri Afika &mdash; Game Programmer</title>
+  <link rel="canonical" href="https://akashakthi.my.id/" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Aka Shakthi Avri Afika" />
+  <meta property="og:title" content="Aka Shakthi Avri Afika — Game Programmer" />
+  <meta property="og:description" content="Game Programmer specializing in Unity/C# and Roblox/Lua. Clean architecture, SOLID principles, and multiplayer systems." />
+  <meta property="og:url" content="https://akashakthi.my.id/" />
+  <meta property="og:image" content="https://akashakthi.my.id/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aka Shakthi Avri Afika — Game Programmer" />
+  <meta name="twitter:description" content="Game Programmer specializing in Unity/C# and Roblox/Lua. Clean architecture, SOLID principles, and multiplayer systems." />
+  <meta name="twitter:image" content="https://akashakthi.my.id/img/og-image.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=neo">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aka Shakthi Avri Afika",
+    "url": "https://akashakthi.my.id/",
+    "image": "https://akashakthi.my.id/img/og-image.png",
+    "jobTitle": "Game Programmer",
+    "email": "mailto:akashakthi0@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Klaten",
+      "addressRegion": "Central Java",
+      "addressCountry": "ID"
+    },
+    "knowsAbout": ["Unity", "C#", "Roblox", "Lua", "Game Programming", "Multiplayer Systems", "SOLID Principles"],
+    "sameAs": [
+      "https://github.com/akashakthi",
+      "https://www.linkedin.com/in/akashakthi",
+      "https://aka-shakthi.itch.io"
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="bg"></div>
@@ -368,10 +422,8 @@
     </section>
   </main>
 
-  <audio id="bgMusic" preload="auto" loop>
+  <audio id="bgMusic" preload="none" loop>
     <source src="music/BgmWeb.mp3" type="audio/mpeg">
-    <source src="music/BgmWeb.ogg" type="audio/ogg">
-    <source src="music/BgmWeb.wav" type="audio/wav">
   </audio>
   <button class="sound-toggle" id="soundToggle" type="button" aria-label="Toggle background music" aria-pressed="false">
     <span class="sound-icon" id="soundIcon">OFF</span>
