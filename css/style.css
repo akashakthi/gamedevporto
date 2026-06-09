@@ -20,16 +20,31 @@
   --shadow-xs: 4px 4px 0 var(--ink);
 }
 
-html.light {
-  --paper: #f7fff2;
-  --surface: #fff8ff;
-  --cyan: #7df7ff;
-  --pink: #ff78bd;
-  --yellow: #ffe95c;
-  --green: #95ff73;
-  --blue: #8ab7ff;
-  --violet: #d2b0ff;
-  --orange: #ffb069;
+/* Dark mode: deep backdrop, bright neo-brutalist cards stay bright so the
+   thick black outlines and hard offset shadows pop against the dark canvas. */
+html.dark {
+  --backdrop-text: #f5f2ea;
+}
+
+html.dark body {
+  background-color: #0e0c16;
+}
+
+html.dark .bg {
+  background:
+    linear-gradient(rgba(245, 242, 234, .05) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(90deg, rgba(245, 242, 234, .05) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(115deg, transparent 0 64%, rgba(157, 239, 244, .1) 64% 73%, transparent 73%),
+    linear-gradient(245deg, transparent 0 70%, rgba(255, 92, 168, .1) 70% 80%, transparent 80%),
+    linear-gradient(180deg, #0e0c16 0%, #15121f 48%, #0b0f15 100%);
+}
+
+html.dark .hero-copy h1,
+html.dark .section-head h2,
+html.dark .section-head p,
+html.dark .lead,
+html.dark footer {
+  color: var(--backdrop-text);
 }
 
 * {
@@ -1405,5 +1420,44 @@ footer {
 
   .sound-text {
     display: none;
+  }
+}
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-links a:focus-visible,
+.theme-btn:focus-visible,
+.menu:focus-visible,
+.sound-toggle:focus-visible,
+.project:focus-visible,
+.contact-card:focus-visible {
+  outline: 4px solid var(--pink);
+  outline-offset: 3px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+
+  .caret {
+    animation: none;
+    opacity: 1;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

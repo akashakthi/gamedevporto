@@ -6,6 +6,7 @@ function initSite() {
   const nav = document.getElementById('nav');
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursor-ring');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const phrases = [
     'Junior Game Programmer @ RIVRS',
@@ -17,6 +18,11 @@ function initSite() {
 
   function startTyping() {
     if (!typed) return;
+
+    if (reduceMotion) {
+      typed.textContent = phrases[0];
+      return;
+    }
 
     let phraseIndex = 0;
     let deleting = false;
@@ -45,12 +51,24 @@ function initSite() {
   }
 
   function setupTheme() {
-    const savedTheme = localStorage.getItem('aka-theme');
-    html.classList.toggle('light', savedTheme === 'alt');
+    const applyTheme = (mode) => {
+      const dark = mode === 'dark';
+      html.classList.toggle('dark', dark);
+      html.classList.remove('light');
+      themeBtn?.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    };
+
+    const stored = localStorage.getItem('aka-theme');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const initial = stored === 'light' || stored === 'dark'
+      ? stored
+      : (prefersLight ? 'light' : 'dark');
+    applyTheme(initial);
 
     themeBtn?.addEventListener('click', () => {
-      html.classList.toggle('light');
-      localStorage.setItem('aka-theme', html.classList.contains('light') ? 'alt' : 'base');
+      const next = html.classList.contains('dark') ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem('aka-theme', next);
     });
   }
 
@@ -67,7 +85,7 @@ function initSite() {
   }
 
   function setupCursor() {
-    if (!cursor || !ring) return;
+    if (!cursor || !ring || reduceMotion) return;
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
@@ -109,7 +127,7 @@ function initSite() {
   function setupShapes() {
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas?.getContext('2d');
-    if (!canvas || !ctx) return;
+    if (!canvas || !ctx || reduceMotion) return;
 
     const colors = ['#ff5ca8', '#fff066', '#9deff4', '#a8f77a', '#c6a5ff', '#ff9f5c'];
     const types = ['rect', 'circle', 'triangle', 'slash'];
@@ -241,10 +259,7 @@ function initSite() {
     if (!bgMusic || !soundToggle || !soundIcon || !soundText) return;
 
     const audioCandidates = [
-      'music/BgmWeb.mp3',
-      'music/BgmWeb.mpeg',
-      'music/BgmWeb.wav',
-      'music/BgmWeb.ogg'
+      'music/BgmWeb.mp3'
     ];
 
     let currentAudioIndex = 0;
